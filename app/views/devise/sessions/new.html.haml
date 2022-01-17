@@ -8,7 +8,11 @@
     = f.label :password
     %br/
     = f.password_field :password, autocomplete: "current-password"
-    
+    %br/
+  .field
+    = f.label :customer
+    %br/
+    = f.text_field :customer_id
   - if devise_mapping.rememberable?
     .field
       = f.check_box :remember_me
