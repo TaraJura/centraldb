@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CentralDB</title>
+<meta content='width=device-width,initial-scale=1' name='viewport'>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="KXR2xEWyLIU2l1k46TQBL4YyzgC2m6ZPgLDnnAD_XeUK9woqJmw2QaQ0ynrhccSY0jM7Yvdqw6cu57Icr5H9Ig" />
+
+<script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-305f0d205866ac9fc3667580728220ae0c3b499e5f15df7c4daaeee4d03b5ac1.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-900648768bd96f3faeba359cf33c1bd01ca424ca4d2d05f36a5d8345112ae93c.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-685d40a0b68f785d3cdbab1c0f3575320497462e335c4a63b8de40a355d883c0.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js">
+<link rel="modulepreload" href="/assets/turbo.min-305f0d205866ac9fc3667580728220ae0c3b499e5f15df7c4daaeee4d03b5ac1.js">
+<link rel="modulepreload" href="/assets/stimulus.min-900648768bd96f3faeba359cf33c1bd01ca424ca4d2d05f36a5d8345112ae93c.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-685d40a0b68f785d3cdbab1c0f3575320497462e335c4a63b8de40a355d883c0.js">
+<script src="/assets/es-module-shims.min-6982885c6ce151b17d1d2841985042ce58e1b94af5dc14ab8268b3d02e7de3d6.js" async="async" data-turbo-track="reload"></script>
+<script type="module">import "application"</script>
+<link rel="stylesheet" href="/assets/application-e0cf9d8fcb18bf7f909d8d91a5e78499f82ac29523d475bf3a9ab265d5e2b451.css" media="all" data-turbolinks-track="reload" />
+<link crossorigin='anonymous' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' rel='stylesheet'>
+</head>
+<body>
+<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+<div class='container-fluid'>
+<a class='navbar-brand' href='/'>Navbar</a>
+<button aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-bs-target='#navbarSupportedContent' data-bs-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarSupportedContent'>
+<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+<li class='nav-item'>
+<a aria-current='page' class='nav-link active' href='#'>Visitors</a>
+</li>
+</ul>
+<a aria-current='page' class='nav-link active' href='/users/sign_in' style='color: black;'>Sign In</a>
+</div>
+</div>
+</nav>
+
+<br>
+<div class='container'>
+<p class='notice'></p>
+<p class='alert'>You need to sign in or sign up before continuing.</p>
+<h2>Log in</h2>
+<form data-turbo="false" action="/users/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="xssOv8cpSLJWcz9JG7P1ZalpdElPW4NoXp0xHcK0AW3TPe6bg52_aC_GwgjnA5uAV8HCrzzH_U3jcSx0FZYZZA" autocomplete="off" /><div class='field'>
+<label for="user_email">Email</label>
+<br>
+<input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email" />
+</div>
+<div class='field'>
+<label for="user_password">Password</label>
+<br>
+<input autocomplete="current-password" type="password" name="user[password]" id="user_password" />
+<br>
+</div>
+<div class='field'>
+<label for="user_customer">Customer</label>
+<br>
+<input type="text" name="user[customer_id]" id="user_customer_id" />
+</div>
+<div class='field'>
+<input name="user[remember_me]" type="hidden" value="0" autocomplete="off" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+<label for="user_remember_me">Remember me</label>
+</div>
+<div class='actions'>
+<input type="submit" name="commit" value="Log in" data-disable-with="Log in" />
+</div>
+</form>
+
+  <a href="/users/password/new">Forgot your password?</a><br />
+
+
+
+
+
+</div>
+</body>
+</html>
