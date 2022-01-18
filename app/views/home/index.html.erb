@@ -1,10 +1,6 @@
 
-<p> User ma prirazenyho customera: </p>
-<%= session[:current_customer] %>
-
-<p> Governings aktualniho usera </p>
-<%= @user_got_these_governings %>
-
-
-<br/>
-<%= @user_is_allowed_to_manipulate_with_customer %>
+<h3> Aktualne prirazeny customer: </h3> <%= session[:current_customer] %>
+<hr>
+<h3> Governings aktualniho usera </h3>  <%= @user_got_these_governings %>
+<hr>
+<h3> Pravo pro manipulaci s customerem </h3>   <%= @user_is_allowed_to_manipulate_with_customer %>

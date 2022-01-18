@@ -32,6 +32,15 @@
     <%= form.text_field :identity_card_type %>
   </div>
 
+
+
+  <div class="visually-hidden">
+    <%= form.label :customer_id, style: "display: block" %>
+    <%= form.text_field :customer_id, value: session[:current_customer] %>
+  </div>
+
+
+
   <div>
     <%= form.label :identity_card_number, style: "display: block" %>
     <%= form.number_field :identity_card_number %>
