@@ -12,6 +12,8 @@
     = render "layouts/header"
     %br/
     .container
-      %p.notice= notice
-      %p.alert= alert
+      - if alert
+        = render "layouts/alerts"
+      - if notice
+        = render "layouts/notice"
       = yield
