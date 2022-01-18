@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_133229) do
+ActiveRecord::Schema.define(version: 2022_01_18_160628) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -82,15 +82,9 @@ ActiveRecord::Schema.define(version: 2022_01_18_133229) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "customer_id"
-    t.integer "visitor_id"
-    t.index ["customer_id"], name: "index_zones_on_customer_id"
-    t.index ["visitor_id"], name: "index_zones_on_visitor_id"
   end
 
   add_foreign_key "governings", "customers"
   add_foreign_key "governings", "users"
   add_foreign_key "visitors", "customers"
-  add_foreign_key "zones", "customers"
-  add_foreign_key "zones", "visitors"
 end

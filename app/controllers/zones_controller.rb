@@ -65,6 +65,6 @@ class ZonesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def zone_params
-      params.require(:zone).permit(:name, :visitor_id, :customer_id)
+      params.require(:zone).permit(:name)
     end
 end

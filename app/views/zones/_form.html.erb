@@ -15,17 +15,7 @@
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
-
-  <div>
-    <%= form.label :visitor_id, style: "display: block" %>
-    <%= form.number_field :visitor_id %>
-  </div>
-
-  <div>
-    <%= form.label :customer_id, style: "display: block" %>
-    <%= form.select :customer_id, Customer.pluck(:name , :id) %>
-  </div>
-
+<br>
   <div>
     <%= form.submit %>
   </div>
