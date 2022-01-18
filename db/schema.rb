@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_092820) do
+ActiveRecord::Schema.define(version: 2022_01_18_101434) do
 
   create_table "customers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2022_01_18_092820) do
     t.date "expires"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "customer_id", null: false
+    t.index ["customer_id"], name: "index_visitors_on_customer_id"
   end
 
   create_table "zones", force: :cascade do |t|
@@ -62,4 +64,5 @@ ActiveRecord::Schema.define(version: 2022_01_18_092820) do
 
   add_foreign_key "governings", "customers"
   add_foreign_key "governings", "users"
+  add_foreign_key "visitors", "customers"
 end
