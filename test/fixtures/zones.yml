@@ -2,6 +2,10 @@
 
 one:
   name: MyString
+  visitor_id: 1
+  customer_id: 1
 
 two:
   name: MyString
+  visitor_id: 1
+  customer_id: 1
