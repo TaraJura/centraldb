@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_145107) do
+ActiveRecord::Schema.define(version: 2022_01_18_085934) do
 
   create_table "customers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2022_01_17_145107) do
     t.string "phone"
     t.string "identity_card_type"
     t.integer "identity_card_number"
-    t.date "expiration"
+    t.date "expires"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

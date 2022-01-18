@@ -6,7 +6,7 @@ class CreateVisitors < ActiveRecord::Migration[7.0]
       t.string :phone
       t.string :identity_card_type
       t.integer :identity_card_number
-      t.date :expiration
+      t.date :expires
 
       t.timestamps
     end
