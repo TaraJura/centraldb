@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :customer_id, style: "display: block" %>
-    <%= form.number_field :customer_id %>
+    <%= form.select :customer_id, Customer.pluck(:name , :id) %>
   </div>
 
   <div>
