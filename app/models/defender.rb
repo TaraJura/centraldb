@@ -1,0 +1,2 @@
+class Defender < ApplicationRecord
+end

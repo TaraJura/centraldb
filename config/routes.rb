@@ -3,11 +3,17 @@ Rails.application.routes.draw do
   resources :visitors_zone_acces
   resources :zones
   resources :visitors
-  
+
   devise_for :users, controllers: {
     sessions: 'home/sessions'
   }
 
   root "home#index"
 
+  get 'defender/index'
 end
+
+
+
+#get 'home/index'
+#root "home#index"
