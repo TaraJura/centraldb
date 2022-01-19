@@ -17,6 +17,7 @@ gem "bootsnap", require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'audited', '~> 5.0', '>= 5.0.2'
 gem "faker", "~> 2.19"
+gem 'rack-mini-profiler'
 
 
 group :development, :test do
