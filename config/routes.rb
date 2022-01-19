@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  get 'defender/index'
+  get 'defender/logger'
 end
 
 
