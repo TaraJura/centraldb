@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_160628) do
+ActiveRecord::Schema.define(version: 2022_01_19_080853) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2022_01_18_160628) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+  end
+
+  create_table "customers_zone_acces", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "customer_id", null: false
+    t.integer "zone_id", null: false
+    t.index ["customer_id"], name: "index_customers_zone_acces_on_customer_id"
+    t.index ["zone_id"], name: "index_customers_zone_acces_on_zone_id"
   end
 
   create_table "governings", force: :cascade do |t|
@@ -78,13 +87,26 @@ ActiveRecord::Schema.define(version: 2022_01_18_160628) do
     t.index ["customer_id"], name: "index_visitors_on_customer_id"
   end
 
+  create_table "visitors_zone_acces", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "zone_id", null: false
+    t.integer "visitor_id", null: false
+    t.index ["visitor_id"], name: "index_visitors_zone_acces_on_visitor_id"
+    t.index ["zone_id"], name: "index_visitors_zone_acces_on_zone_id"
+  end
+
   create_table "zones", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "customers_zone_acces", "customers"
+  add_foreign_key "customers_zone_acces", "zones"
   add_foreign_key "governings", "customers"
   add_foreign_key "governings", "users"
   add_foreign_key "visitors", "customers"
+  add_foreign_key "visitors_zone_acces", "visitors"
+  add_foreign_key "visitors_zone_acces", "zones"
 end
