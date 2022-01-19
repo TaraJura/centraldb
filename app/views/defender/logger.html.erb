@@ -1,0 +1,21 @@
+
+   <table class="table table-striped able-hover table-bordered table align-middle">
+    <tr>
+      <th scope="col"> ID </th>
+      <th scope="col"> auditable_type </th>
+      <th scope="col">Action</th>
+      <th scope="col"> Audited_changes </th>
+    </tr>
+<% Audited::Audit.order(created_at: :desc).each do |audit| %>
+   <table class="table table-striped able-hover table-bordered table align-middle">
+
+    <tr>
+      <th scope="row"><%= audit.id %></th>
+      <td><%= audit.auditable_type %></td>
+      <td><%= audit.action %></td>
+      <td><%= audit.audited_changes %></td>
+ 
+    </tr>
+</table>
+
+<% end %>

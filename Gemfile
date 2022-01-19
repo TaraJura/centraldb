@@ -16,6 +16,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'audited', '~> 5.0', '>= 5.0.2'
+gem "faker", "~> 2.19"
+
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

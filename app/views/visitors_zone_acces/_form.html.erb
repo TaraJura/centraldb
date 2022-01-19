@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :zone_id, style: "display: block" %>
-    <%= form.select :zone_id, Zone.pluck(:id , :id) %>
+    <%= form.select :zone_id, Zone.pluck(:name , :id) %>
   </div>
   <br>
   <div>

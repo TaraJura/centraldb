@@ -32,4 +32,11 @@
     <strong>Accessible zones:</strong>
     <%= visitor.visitorsZoneAcce.map{|visitorsZoneAcce| visitorsZoneAcce.zone_id}.join(", ") %>
   </p>
+
+  <p>
+    <strong>Accessible zones:</strong>
+
+    <%= visitor.visitorsZoneAcce.map { |i| i.zone.name }.join (", ")  %>
+  </p>
+
 </div>
