@@ -1,4 +1,4 @@
 class Zone < ApplicationRecord
   has_many :CustomersZoneAcce
-  has_many :VisitorsZoneAcce
+  has_many :visitorsZoneAcce
 end

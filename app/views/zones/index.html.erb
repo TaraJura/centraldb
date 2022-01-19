@@ -6,7 +6,9 @@
   <% @zones.each do |zone| %>
     <%= render zone %>
     <p>
-      <%= link_to "Show this zone", zone %>
+      <%= link_to "Show this zone", zone %><br>
+      <%= link_to "Customer acces for this Zone", new_customers_zone_acce_path %><br>
+      <%= link_to "Visitors acces for this Zone", new_visitors_zone_acce_path %>
     </p>
   <% end %>
 </div>

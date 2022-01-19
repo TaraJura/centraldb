@@ -1,0 +1,27 @@
+<%= form_with(model: customers_zone_acce) do |form| %>
+  <% if customers_zone_acce.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(customers_zone_acce.errors.count, "error") %> prohibited this customers_zone_acce from being saved:</h2>
+
+      <ul>
+        <% customers_zone_acce.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :zone_id, style: "display: block" %>
+    <%= form.text_field :zone_id %>
+  </div>
+  
+  <div class="visually-hidden">
+    <%= form.label :customer_id, style: "display: block" %>
+    <%= form.text_field :customer_id, value: session[:current_customer] %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

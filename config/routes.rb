@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :customers_zone_acces
+  resources :visitors_zone_acces
   resources :zones
   resources :visitors
   

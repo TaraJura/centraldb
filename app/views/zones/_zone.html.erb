@@ -3,5 +3,13 @@
     <strong>Name:</strong>
     <%= zone.name %>
   </p>
+  <p>
+    <strong>ID:</strong>
+    <%= zone.id %>
+  </p>
+  <p>
+    <strong>Visitor ID:</strong>
+    <%= zone.visitorsZoneAcce.map{|visitorsZoneAcce| visitorsZoneAcce.visitor_id}.join(", ") %>
+  </p>
 
 </div>
