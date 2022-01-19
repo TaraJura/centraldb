@@ -29,7 +29,7 @@
     <%= visitor.expires %>
   </p>
   <p>
-    <strong>Zone:</strong>
-    <%= visitor.inspect %>
+    <strong>Accessible zones:</strong>
+    <%= visitor.visitorsZoneAcce.map{|visitorsZoneAcce| visitorsZoneAcce.zone_id}.join(", ") %>
   </p>
 </div>

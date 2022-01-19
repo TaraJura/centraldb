@@ -6,6 +6,7 @@
   <% @visitors.each do |visitor| %>
     <%= render visitor %>
     <p>
+    <%= link_to "Visitors acces for this Zone", new_visitors_zone_acce_path %><br>
       <%= link_to "Show this visitor", visitor %>
     </p>
   <% end %>
