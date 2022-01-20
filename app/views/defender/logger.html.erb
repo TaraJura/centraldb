@@ -1,21 +1,26 @@
 
-   <table class="table table-striped able-hover table-bordered table align-middle">
+   <div class="table-responsive">
+   <table class="table table-striped table-hover table-bordered align-middle">
     <tr>
-      <th scope="col"> ID </th>
-      <th scope="col"> auditable_type </th>
-      <th scope="col">Action</th>
-      <th scope="col"> Audited_changes </th>
+      <th style="width: 10%;" scope="col"> Time </th>
+      <th style="width: 5%;" scope="col"> User ID </th>
+      <th style="width: 15%;" scope="col"> auditable_type </th>
+      <th style="width: 10%;" scope="col">Action</th>
+      <th style="width: 60%;" scope="col"> Audited_changes </th>
     </tr>
 <% Audited::Audit.order(created_at: :desc).each do |audit| %>
-   <table class="table table-striped able-hover table-bordered table align-middle">
-
+   
+   <table class="table table-striped table-hover table-bordered align-middle">
+    
     <tr>
-      <th scope="row"><%= audit.id %></th>
-      <td><%= audit.auditable_type %></td>
-      <td><%= audit.action %></td>
-      <td><%= audit.audited_changes %></td>
- 
+      <th style="width: 10%;" scope="row"><%= audit.created_at %></th>
+      <td style="width: 5%;"><%= audit.user_id %></td>
+      <td style="width: 15%;"><%= audit.auditable_type %></td>
+      <td style="width: 10%;"><%= audit.action %></td>
+      <td style="width: 60%;"><%= audit.audited_changes %></td>
     </tr>
-</table>
+  
+  </table>
 
 <% end %>
+</div>

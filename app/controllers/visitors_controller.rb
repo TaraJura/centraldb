@@ -13,6 +13,7 @@ class VisitorsController < ApplicationController
   # GET /visitors/new
   def new
     @visitor = Visitor.new
+    @visitor.visitorsZoneAcce << VisitorsZoneAcce.new
   end
 
   # GET /visitors/1/edit
@@ -65,6 +66,6 @@ class VisitorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def visitor_params
-      params.require(:visitor).permit(:name, :email, :phone, :identity_card_type, :identity_card_number, :expires, :customer_id)
+      params.require(:visitor).permit(:name, :email, :phone, :identity_card_type, :identity_card_number, :expires, :customer_id, visitorsZoneAcce_attributes:[:zone_id] )
     end
 end

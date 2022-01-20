@@ -46,7 +46,18 @@
     <%= form.label :expires, style: "display: block" %>
     <%= form.date_field :expires %>
   </div>
- 
+
+    <br>
+
+   <div>
+    <%= form.fields_for :visitorsZoneAcce do |zone_form| %>
+    <%= zone_form.label :zone_id %> <br>
+    <%= zone_form.select :zone_id, Zone.pluck(:name , :id) %>
+    <% end %>
+  </div>
+
+    <br>
+    
   <div>
     <%= form.submit %>
   </div>
