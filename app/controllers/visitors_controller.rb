@@ -14,6 +14,7 @@ class VisitorsController < ApplicationController
   def new
     @visitor = Visitor.new
     @visitor.visitorsZoneAcce << VisitorsZoneAcce.new
+    
   end
 
   # GET /visitors/1/edit
@@ -23,6 +24,12 @@ class VisitorsController < ApplicationController
   # POST /visitors or /visitors.json
   def create
     @visitor = Visitor.new(visitor_params)
+    
+    if @visitor.visitor_type == "1"
+      @visitor.expires = Time.now
+    end
+
+
 
     respond_to do |format|
       if @visitor.save
@@ -66,6 +73,6 @@ class VisitorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def visitor_params
-      params.require(:visitor).permit(:name, :email, :phone, :identity_card_type, :identity_card_number, :expires, :customer_id, visitorsZoneAcce_attributes:[:zone_id] )
+      params.require(:visitor).permit(:name, :email, :phone, :identity_card_type, :identity_card_number, :expires, :visitor_type, :customer_id, visitorsZoneAcce_attributes:[:zone_id] )
     end
 end

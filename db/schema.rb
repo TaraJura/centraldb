@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_114153) do
+ActiveRecord::Schema.define(version: 2022_01_20_132635) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 2022_01_19_114153) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "customer_id", null: false
+    t.string "visitor_type"
     t.index ["customer_id"], name: "index_visitors_on_customer_id"
   end
 
