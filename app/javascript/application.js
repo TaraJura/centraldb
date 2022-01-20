@@ -4,8 +4,12 @@ import "controllers"
 
 
 window.hiddendivfortime = function() {
-  if  (document.querySelector('input[name="visitor[expires]"]:checked').value == "3")
+  if  (document.querySelector('input[name="visitor[visitor_type]"]:checked').value == "3")
   document.getElementById("visitor_expires_div").style.display = "block";
   else
   document.getElementById("visitor_expires_div").style.display = "none";
 }
+
+
+
+

@@ -14,7 +14,6 @@ class VisitorsController < ApplicationController
   def new
     @visitor = Visitor.new
     @visitor.visitorsZoneAcce << VisitorsZoneAcce.new
-    
   end
 
   # GET /visitors/1/edit
@@ -24,12 +23,14 @@ class VisitorsController < ApplicationController
   # POST /visitors or /visitors.json
   def create
     @visitor = Visitor.new(visitor_params)
-    
+
     if @visitor.visitor_type == "1"
-      @visitor.expires = Time.now
+      @visitor.expires = Time.now + 1.days
     end
 
-
+    if @visitor.visitor_type == "2"
+      @visitor.expires = Time.now + 5.years
+    end
 
     respond_to do |format|
       if @visitor.save
