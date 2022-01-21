@@ -1,6 +1,9 @@
 
-<h3> Aktualne prirazeny customer: </h3> <%= session[:current_customer] %>
-<hr>
-<h3> Governings aktualniho usera </h3>  <%= @user_got_these_governings %>
-<hr>
-<h3> Pravo pro manipulaci s customerem </h3>   <%= @user_is_allowed_to_manipulate_with_customer %>
+<ul class="list-group">
+  <li class="list-group-item active" aria-current="true">Account Info </li>
+  <li class="list-group-item" aria-current="true">User ID: <%= current_user.id %> </li>
+  <li class="list-group-item" aria-current="true">User Email: <%= current_user.email %> </li>
+  <li class="list-group-item">Governings (Accessible customers) : <%= @user_got_these_governings %> </li>
+  <li class="list-group-item">Customer ID: <%= session[:current_customer] %> </li>
+  <li class="list-group-item"> SuperAdmin: <%= @user_is_allowed_to_manipulate_with_customer %> </li>
+</ul>

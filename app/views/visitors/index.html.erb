@@ -1,0 +1,57 @@
+<p style="color: green">
+  <%= notice %>
+</p>
+<h1>Visitors</h1>
+<div id="visitors">
+  <% @visitors.each do |visitor| %>
+   <div id="<%= dom_id visitor %>">
+      <p>
+        <strong>Name:</strong>
+        <%= visitor.name %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= visitor.email %>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <%= visitor.phone %>
+      </p>
+
+      <p>
+        <strong>Identity card type:</strong>
+        <%= visitor.identity_card_type %>
+      </p>
+
+      <p>
+        <strong>Identity card number:</strong>
+        <%= visitor.identity_card_number %>
+      </p>
+
+      <p>
+        <strong>Expires:</strong>
+        <%= visitor.expires %>
+      </p>
+      <p>
+        <strong>Accessible zones:</strong>
+        <%= visitor.visitorsZoneAcce.map{|visitorsZoneAcce| visitorsZoneAcce.zone_id}.join(", ") %>
+      </p>
+
+      <p>
+        <strong>Accessible zones:</strong>
+
+        <%= visitor.visitorsZoneAcce.map { |i| i.zone.name }.join (", ")  %>
+      </p>
+
+</div>
+
+    <p>
+      <%= link_to "Visitors access for this Zone", new_visitors_zone_acce_path %>
+      <br/>
+      <%= link_to "Show this visitor", visitor %>
+    </p>
+  <% end %>
+</div>
+<%= link_to "New visitor", new_visitor_path %>
