@@ -1,17 +1,19 @@
 
-   <div class="table-responsive">
-   <table class="table table-striped table-hover table-bordered align-middle">
+   <table class="table table-striped table-hover align-middle">
+   <thead class="table-dark">
     <tr>
-      <th style="width: 10%;" scope="col"> Time </th>
-      <th style="width: 5%;" scope="col"> User ID </th>
+      <th style="width: 9%;" scope="col"> Time </th>
+      <th style="width: 6%;" scope="col"> User ID </th>
       <th style="width: 15%;" scope="col"> auditable_type </th>
       <th style="width: 10%;" scope="col">Action</th>
       <th style="width: 60%;" scope="col"> Audited_changes </th>
     </tr>
+    </thead>
+
 <% Audited::Audit.order(created_at: :desc).each do |audit| %>
-   
-   <table class="table table-striped table-hover table-bordered align-middle">
-    
+
+   <table class="table table-striped table-hover  align-middle">
+   <tbody>
     <tr>
       <th style="width: 10%;" scope="row"><%= audit.created_at %></th>
       <td style="width: 5%;"><%= audit.user_id %></td>
@@ -19,8 +21,6 @@
       <td style="width: 10%;"><%= audit.action %></td>
       <td style="width: 60%;"><%= audit.audited_changes %></td>
     </tr>
-  
+    </tbody>
   </table>
-
 <% end %>
-</div>

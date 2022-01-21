@@ -3,7 +3,14 @@ class VisitorsController < ApplicationController
 
   # GET /visitors or /visitors.json
   def index
+
     @visitors = Visitor.where(customer: current_customer).with_zones
+    
+    @visitors.each do |aa|
+      if aa.expires < Time.now
+        aa.destroy
+      end 
+    end
   end
 
   # GET /visitors/1 or /visitors/1.json
