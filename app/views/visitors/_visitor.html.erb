@@ -1,0 +1,39 @@
+     <p>
+        <strong>Name:</strong>
+        <%= visitor.name %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= visitor.email %>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <%= visitor.phone %>
+      </p>
+
+      <p>
+        <strong>Identity card type:</strong>
+        <%= visitor.identity_card_type %>
+      </p>
+
+      <p>
+        <strong>Identity card number:</strong>
+        <%= visitor.identity_card_number %>
+      </p>
+
+      <p>
+        <strong>Expires:</strong>
+        <%= visitor.expires %>
+      </p>
+      <p>
+        <strong>Accessible zones:</strong>
+        <%= visitor.visitorsZoneAcce.map{|visitorsZoneAcce| visitorsZoneAcce.zone_id}.join(", ") %>
+      </p>
+
+      <p>
+        <strong>Accessible zones:</strong>
+
+        <%= visitor.visitorsZoneAcce.map { |i| i.zone.name }.join (", ")  %>
+      </p>
