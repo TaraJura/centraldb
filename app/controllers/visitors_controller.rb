@@ -7,7 +7,7 @@ class VisitorsController < ApplicationController
     @visitors = Visitor.where(customer: current_customer).with_zones
     
     @visitors.each do |aa|
-      if aa.expires < nil? || Time.now
+      if aa.expires.nil? || aa.expires < Time.now
         aa.destroy
       end 
     end
