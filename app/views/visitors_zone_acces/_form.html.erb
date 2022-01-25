@@ -1,7 +1,7 @@
 <%= form_with(model: visitors_zone_acce) do |form| %>
   <% if visitors_zone_acce.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(visitors_zone_acce.errors.count, "error") %> prohibited this visitors_zone_acce from being saved:</h2>
+      <h2><%= pluralize(visitors_zone_acce.errors.count, "error") %> prohibited this visitor_zone_access from being saved:</h2>
 
       <ul>
         <% visitors_zone_acce.errors.each do |error| %>
