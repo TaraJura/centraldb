@@ -4,7 +4,6 @@ class Home::SessionsController < Devise::SessionsController
      which_customer_is_selected = params[:user][:customer_id]
 
      session[:current_customer] = which_customer_is_selected.to_i
-     Audited.store[:customer_id] = which_customer_is_selected.to_i
 
     if !current_user.user_can_acces_customer(session[:current_customer])
       sign_out current_user

@@ -1,6 +1,8 @@
-# !!!!!!!!!!!!!!!!!!!!!!  tomuto modelu jsem smazal migraci... nutno dodelat 
 
 
-#class CustomAudit < ApplicationRecord
-#  acts_as_customer_log_id :user
-#end
+
+class CustomAudit < Audited::Audit
+  before_create do 
+    self.comment = Audited.store[:customer_id]
+  end
+end
