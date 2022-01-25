@@ -12,7 +12,7 @@ class VisitorsZoneAccesController < ApplicationController
 
   # GET /visitors_zone_acces/new
   def new
-    @visitors_zone_acce = VisitorsZoneAcce.new
+    @visitors_zone_acce = VisitorsZoneAcce.new(visitor_id: params[:visitor_id])
   end
 
   # GET /visitors_zone_acces/1/edit

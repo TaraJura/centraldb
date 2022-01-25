@@ -24,7 +24,7 @@
               <td style="width: 8%"> <p> <%= visitor.expires %> </p> </td>
               <td style="width: 22%"> <p> <%= visitor.visitorsZoneAcce.map { |i| i.zone.name }.join (", ")  %> </p> </td>
               <td style="width: 15%"> <%= link_to "Show this visitor", visitor, class:"btn btn-outline-dark" %> </td>
-              <td style="width: 10%"> <%= link_to "Add Zone", new_visitors_zone_acce_path, class:"btn btn-outline-dark" %> </td>
+              <td style="width: 10%"> <%= link_to "Add Zone", new_visitors_zone_acce_path(visitor_id: visitor.id), class:"btn btn-outline-dark" %> </td>
             </tr>
             <% end %>
           </tbody>

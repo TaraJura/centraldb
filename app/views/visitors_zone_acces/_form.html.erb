@@ -20,6 +20,7 @@
     <%= form.label :visitor_id, style: "display: block" %>
     <%= form.select :visitor_id, Visitor.pluck(:name , :id)%>
   </div>
+
 <br>
   <div>
     <%= form.submit %>
