@@ -10,12 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+<br>
   <div>
     <%= form.label :zone_id, style: "display: block" %>
-    <%= form.text_field :zone_id %>
+    <%= form.select :zone_id, Zone.pluck(:name, :id) %>
   </div>
-  
+  <br>
   <div class="visually-hidden">
     <%= form.label :customer_id, style: "display: block" %>
     <%= form.text_field :customer_id, value: session[:current_customer] %>
@@ -25,3 +25,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+

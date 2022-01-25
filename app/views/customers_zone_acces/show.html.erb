@@ -3,9 +3,9 @@
 <%= render @customers_zone_acce %>
 
 <div>
-  <%= link_to "Edit this customers zone acce", edit_customers_zone_acce_path(@customers_zone_acce) %> |
-  <%= link_to "Back to zones", zones_path %>
+  <%= link_to "Edit", edit_customers_zone_acce_path(@customers_zone_acce) %> |
+  <%= link_to "Back", zones_path %>
     <br>
     <br>
-  <%= button_to "Destroy this customers zone acce", @customers_zone_acce, method: :delete %>
+  <%= button_to "Destroy", @customers_zone_acce, method: :delete %>
 </div>

@@ -11,7 +11,6 @@
           <th scope="col"><strong>Accessed visitors:</strong></th>
           <th scope="col"></th>
           <th scope="col"></th>
-          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -21,8 +20,7 @@
           <td><%= zone.name %></td>
           <td><%= zone.visitorsZoneAcce.map{|visitorsZoneAcce| visitorsZoneAcce.visitor_id}.join(", ") %></td>
           <td> <%= link_to "Show this zone", zone, class:"btn btn-outline-dark" %><br></td>
-          <td> <%= link_to "Customers access for this Zone", new_customers_zone_acce_path, class:"btn btn-outline-dark" %><br></td>
-          <td><%= link_to "Visitors access for this Zone", new_visitors_zone_acce_path, class:"btn btn-outline-dark" %></td>
+          <td> <%= link_to "Add Customer", new_customers_zone_acce_path, class:"btn btn-outline-dark" %><br></td>
         </tr>
         <% end %>
       </tbody>
