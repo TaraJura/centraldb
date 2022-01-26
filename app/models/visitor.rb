@@ -6,7 +6,6 @@ class Visitor < ApplicationRecord
 
   scope :with_zones, -> { includes(visitorsZoneAcce: :zone) }
   
-  # Visitor.includes(visitorsZoneAcce: :zone).all.each {|v| v.visitorsZoneAcce.map{|vz| puts vz.zone.name}}; 
 
 
 end

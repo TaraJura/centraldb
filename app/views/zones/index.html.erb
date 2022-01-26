@@ -4,21 +4,21 @@
 <table class="table table-striped table-hover table-borderless"> 
       <thead class="table-dark">
         <tr>
-          <th scope="col"><strong>Zone ID:</strong></th>
-          <th scope="col"><strong>Name:</strong></th>
-          <th scope="col"><strong>Accessed visitors:</strong></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
+          <th scope="col" style="width: 5%" ><strong>Zone ID:</strong></th>
+          <th scope="col" style="width: 10%" ><strong>Name:</strong></th>
+          <th scope="col" style="width: 60%" ><strong>Accessed visitors:</strong></th>
+          <th scope="col" style="width: 5%" ></th>
+          <th scope="col" style="width: 15%" ></th>
         </tr>
       </thead>
       <tbody>
         <% @zones.each do |zone| %>    
         <tr>
-          <td><%= zone.id %></td>
-          <td><%= zone.name %></td>
-          <td><%= zone.visitorsZoneAcce.map{|visitorsZoneAcce| visitorsZoneAcce.visitor_id}.join(", ") %></td>
-          <td> <%= link_to "Show this zone", zone, class:"btn btn-outline-dark" %><br></td>
-          <td> <%= link_to "Add Customer", new_customers_zone_acce_path, class:"btn btn-outline-dark" %><br></td>
+          <td style="width: 8%" ><%= zone.id %></td>
+          <td style="width: 8%" ><%= zone.name %></td>
+          <td style="width: 8%" ><%= zone.visitorsZoneAcce.map{|visitorsZoneAcce| visitorsZoneAcce.visitor_id}.join(", ") %></td>
+          <td style="width: 8%" ><%= link_to "Show", zone, class:"btn btn-outline-dark" %><br></td>
+          <td style="width: 8%" ><%= link_to "Add Customer", new_customers_zone_acce_path, class:"btn btn-outline-dark" %><br></td>
         </tr>
         <% end %>
       </tbody>

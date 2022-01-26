@@ -1,6 +1,3 @@
-<p style="color: green">
-  <%= notice %>
-</p>
 <h1>Active Visitors</h1>
 <br>
     <table class="table table-striped table-hover table-borderless"> 
@@ -8,10 +5,10 @@
             <tr>
               <th scope="col" style="width: 13%"><strong>Name:</strong></th>
               <th scope="col" style="width: 22%"><strong>Email:</strong></th>
-              <th scope="col" style="width: 10%"><strong>Phone:</strong></th>
+              <th scope="col" style="width: 13%"><strong>Phone:</strong></th>
               <th scope="col" style="width: 8%"><strong>Expires:</strong></th>
-              <th scope="col" style="width: 22%"><strong>Accessible zones:</strong></th>
-              <th scope="col" style="width: 15%"></th>
+              <th scope="col" style="width: 29%"><strong>Accessible zones:</strong></th>
+              <th scope="col" style="width: 5%"></th>
               <th colspan="3" style="width: 10%"></th>
             </tr>
           </thead>
@@ -20,10 +17,10 @@
             <tr>
               <td style="width: 13%"> <p> <%= visitor.name %> </p> </td>
               <td style="width: 22%"> <p> <%= visitor.email %> </p> </td>
-              <td style="width: 10%"> <p> <%= visitor.phone %> </p> </td>
+              <td style="width: 13%"> <p> <%= visitor.phone %> </p> </td>
               <td style="width: 8%"> <p> <%= visitor.expires %> </p> </td>
-              <td style="width: 22%"> <p> <%= visitor.visitorsZoneAcce.map { |i| i.zone.name }.join (", ")  %> </p> </td>
-              <td style="width: 15%"> <%= link_to "Show this visitor", visitor, class:"btn btn-outline-dark" %> </td>
+              <td style="width: 29%"> <p> <%= visitor.visitorsZoneAcce.map { |i| i.zone.name }.join (", ")  %> </p> </td>
+              <td style="width: 5%"> <%= link_to "Show", visitor, class:"btn btn-outline-dark" %> </td>
               <td style="width: 10%"> <%= link_to "Add Zone", new_visitors_zone_acce_path(visitor_id: visitor.id), class:"btn btn-outline-dark" %> </td>
             </tr>
             <% end %>
