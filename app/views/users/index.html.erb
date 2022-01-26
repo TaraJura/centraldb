@@ -1,0 +1,26 @@
+<%= form_with(model: @user) do |form| %>
+
+
+  <div class="field mb-3">
+    <%= form.text_field :name, placeholder:"name" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.text_field :phone, placeholder:"Phone" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.text_field :account_level, placeholder:"Account Level" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.text_field :password, placeholder:"Password" %>
+  </div>
+
+
+
+  <div class="actions">
+  <br>
+    <%= form.submit %>
+  </div>
+<% end %>
