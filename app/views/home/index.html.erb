@@ -5,4 +5,5 @@
   <li class="list-group-item">Governings (Accessible customers) : <%= @user_got_these_governings %> </li>
   <li class="list-group-item">Customer ID: <%= session[:current_customer] %> </li>
   <li class="list-group-item"> SuperAdmin: <%= @user_is_allowed_to_manipulate_with_customer %> </li>
+  <li class="list-group-item"> Account Level: <%= current_user.account_level %></li>
 </ul>

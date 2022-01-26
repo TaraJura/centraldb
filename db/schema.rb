@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_132635) do
+ActiveRecord::Schema.define(version: 2022_01_26_113150) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_132635) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "phone"
+    t.integer "account_level"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
