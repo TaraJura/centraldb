@@ -1,3 +1,4 @@
-<td><%= zone.id %></td>
-<td><%= zone.name %></td>
-<td><%= zone.visitorsZoneAcce.map{|visitorsZoneAcce| visitorsZoneAcce.visitor_id}.join(", ") %></td>
+<td>ID: <%= zone.id %></td><br>
+<td>Name: <%= zone.name %></td><br>
+<td>Visitors: <%= zone.visitorsZoneAcce.map{|visitorsZoneAcce| visitorsZoneAcce.visitor_id}.join(", ") %></td>
+<br>
