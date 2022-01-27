@@ -44,6 +44,8 @@ class VisitorsController < ApplicationController
         format.html { redirect_to visitor_url(@visitor), notice: "Visitor was successfully created." }
         format.json { render :show, status: :created, location: @visitor }
       else
+        puts @visitor.errors.inspect
+        puts params.inspect
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @visitor.errors, status: :unprocessable_entity }
       end

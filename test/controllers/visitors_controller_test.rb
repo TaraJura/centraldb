@@ -1,8 +1,15 @@
 require "test_helper"
 
+
 class VisitorsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
-    @visitor = visitors(:one)
+    sign_in users(:superadmin)
+    @visitor = visitors(:visitor1)
+    @email = Faker::Internet.email
+    @customer = customers(:customer)
+    
   end
 
   test "should get index" do
@@ -17,7 +24,7 @@ class VisitorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create visitor" do
     assert_difference("Visitor.count") do
-      post visitors_url, params: { visitor: { email: @visitor.email, expires: @visitor.expires, identity_card_number: @visitor.identity_card_number, identity_card_type: @visitor.identity_card_type, name: @visitor.name, phone: @visitor.phone } }
+      post visitors_url, params: { visitor: { email: @email, expires: @visitor.expires, identity_card_number: @visitor.identity_card_number, identity_card_type: @visitor.identity_card_type, name: @visitor.name, phone: @visitor.phone, customer_id: @customer.id } }
     end
 
     assert_redirected_to visitor_url(Visitor.last)

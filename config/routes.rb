@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   resources :visitors_zone_acces
   resources :zones
   resources :visitors
-  resources :users
+
 
   devise_for :users, controllers: {
     sessions: 'home/sessions'
   }
 
+  resources :users
+  
   root "home#index"
 
   get 'defender/logger' 

@@ -1,17 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  email: MyString
-  phone: MyString
+visitor1:
+  name: John
+  email: John1@test.tld
+  phone: "+420 123 123 123"
   identity_card_type: MyString
   identity_card_number: 1
   expires: 2022-01-18
+  customer: customer
 
-two:
-  name: MyString
-  email: MyString
-  phone: MyString
+visitor2:
+  name: Bob
+  email: Bob@test.tld
+  phone: "+420 123 123 123"
   identity_card_type: MyString
   identity_card_number: 1
   expires: 2022-01-18
+  customer: customer

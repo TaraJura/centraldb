@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_customer
-    @current_customer ||= current_user.governings.find_by(customer_id: session[:current_customer]).customer
+#    @current_customer ||= current_user.governings.find_by(customer_id: session[:current_customer]).customer
+      @current_customer ||= current_user.governings.find_by(customer_id: Rails.env.test? ? Customer.first.id : session[:current_customer]).customer
   end
 
   def put_customerid_to_audited_store

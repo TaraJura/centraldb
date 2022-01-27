@@ -2,7 +2,7 @@ require "test_helper"
 
 class ZonesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @zone = zones(:one)
+    @zone = zones(:sal1)
   end
 
   test "should get index" do
@@ -17,7 +17,7 @@ class ZonesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create zone" do
     assert_difference("Zone.count") do
-      post zones_url, params: { zone: { customer_id: @zone.customer_id, name: @zone.name, visitor_id: @zone.visitor_id } }
+      post zones_url, params: { zone: { name: @zone.name } }
     end
 
     assert_redirected_to zone_url(Zone.last)
@@ -34,7 +34,7 @@ class ZonesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update zone" do
-    patch zone_url(@zone), params: { zone: { customer_id: @zone.customer_id, name: @zone.name, visitor_id: @zone.visitor_id } }
+    patch zone_url(@zone), params: { zone: { name: @zone.name } }
     assert_redirected_to zone_url(@zone)
   end
 

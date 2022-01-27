@@ -3,7 +3,5 @@
 one:
   expires: 2022-01-13
   superadmin: false
-
-two:
-  expires: 2022-01-13
-  superadmin: false
+  user: superadmin
+  customer: customer

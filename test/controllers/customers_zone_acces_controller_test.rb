@@ -3,6 +3,8 @@ require "test_helper"
 class CustomersZoneAccesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @customers_zone_acce = customers_zone_acces(:one)
+    @zone = zones(:sal2)
+    @customer = customers(:customer)
   end
 
   test "should get index" do
@@ -17,7 +19,7 @@ class CustomersZoneAccesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create customers_zone_acce" do
     assert_difference("CustomersZoneAcce.count") do
-      post customers_zone_acces_url, params: { customers_zone_acce: {  } }
+      post customers_zone_acces_url, params: { customers_zone_acce: { zone_id: @zone.id, customer_id: @customer.id } }
     end
 
     assert_redirected_to customers_zone_acce_url(CustomersZoneAcce.last)
@@ -31,11 +33,6 @@ class CustomersZoneAccesControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_customers_zone_acce_url(@customers_zone_acce)
     assert_response :success
-  end
-
-  test "should update customers_zone_acce" do
-    patch customers_zone_acce_url(@customers_zone_acce), params: { customers_zone_acce: {  } }
-    assert_redirected_to customers_zone_acce_url(@customers_zone_acce)
   end
 
   test "should destroy customers_zone_acce" do
